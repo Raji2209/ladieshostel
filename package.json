@@ -1,0 +1,23 @@
+{
+  "name": "static1234",
+  "version": "1.0.0",
+  "description": "trying",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "^4.13.4",
+    "morgan": "~1.6.1",
+    "nodemailer": "2.6.4",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {}
+}
