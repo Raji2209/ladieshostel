@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('nodemailer');
 var nodemailer = require('nodemailer');
- var routes = require('./routes/index');
+var routes = require('./routes/index');
 
 var app = express();
  
@@ -22,11 +22,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
- 
- 
-
-
 
  
 // create reusable transporter object using the default SMTP transport 
@@ -62,8 +57,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
-
-
 
 module.exports = app;

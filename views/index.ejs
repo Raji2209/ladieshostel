@@ -13,6 +13,7 @@
   <link href="css/main.css" rel="stylesheet">
   <link id="css-preset" href="css/presets/preset1.css" rel="stylesheet">
   <link href="css/responsive.css" rel="stylesheet">
+   <link href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 
   <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -378,7 +379,7 @@
                 <div class="form-group">
                   <!--button type="submit" class="btn-submit">Send Now</button-->
 				  <button type="submit" class="btn btn-primary">Send Now</button>
-				  <%=msg%>test
+				 
                 </div>
               </form>   
             </div>
@@ -396,7 +397,8 @@
       </div>
     </div>        
   </section><!--/#contact-->
-
+  
+  
 
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -408,6 +410,34 @@
   <script type="text/javascript" src="js/jquery.countTo.js"></script>
   <script type="text/javascript" src="js/lightbox.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
-
+   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+     <script>
+       toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-center",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+var msg='<%=locals.msg%>';
+var error='<%=locals.error%>';
+if(msg!==''){
+   if(error){
+       toastr.error('<%=locals.msg%>', 'Hello <%=locals.name%>')
+   }else{
+      toastr.sucess('<%=locals.msg%>', 'Hello <%=locals.name%>')
+}
+}
+   </script>
 </body>
 </html>
