@@ -93,6 +93,6 @@ var emailadd = req.body.email;
 });
 
 
-module.exports = router;
+//module.exports = router;
 
 module.exports = app;
