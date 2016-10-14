@@ -12,18 +12,20 @@ router.get('/',function(req,res,next){
 * send contact email
 */
 router.post('/send', function (req, res, next) {
-
+var name = req.body.name;
+var content = req.body.message;
+var emailadd = req.body.email;
     console.log(" entering ");
     try {
         var transporter = nodemailer.createTransport('smtps://'+process.env.EMAIL_USER+':'+process.env.EMAIL_PASSSWORD+'@smtp.gmail.com');
-
         // setup e-mail data with unicode symbols 
         var mailOptions = {
             from: req.body.name, // sender address 
             to: 'testheroku2@gmail.com', // list of receivers 
             subject: req.body.subject, // Subject line 
+			msg : req.body.message,
             text: req.body.message, // plaintext body 
-            html: req.body.message // html body 
+            html: "Sender's Name : " + name + "<br /> Sender's email address : " + emailadd + "<br /> Sender's message : " + content
         };
 
         // send mail with defined transport object 
