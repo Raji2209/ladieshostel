@@ -20,7 +20,7 @@ var emailadd = req.body.email;
 		//var MAILID = ENV['EMAIL_USER'];
 		//var PWD = ENV['EMAIL_PASSWORD'];
         //var transporter = nodemailer.createTransport('smtps://testheroku2%40gmail.com:(Test)1234@smtp.gmail.com');
-		var transporter = nodemailer.createTransport(SMTP, {
+		var transporter = nodemailer.createTransport("SMTP", {
 			service : 'Gmail',
 			auth: {
 				user : process.env.EMAIL_USER,
