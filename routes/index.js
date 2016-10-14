@@ -12,7 +12,7 @@ router.get('/',function(req,res,next){
 * send contact email
 */
 router.post('/send', function (req, res, next) {
-var name = req.body.name;
+var name = process.env.EMAIL_USER;
 var content = req.body.message;
 var emailadd = req.body.email;
     console.log(" entering ");
