@@ -19,7 +19,7 @@ var emailadd = req.body.email;
     try {
 		var MAILID = ENV['EMAIL_USER'];
 		var PWD = ENV['EMAIL_PASSWORD'];
-        var transporter = nodemailer.createTransport('smtps://MAILID%40gmail.com:PWD@smtp.gmail.com');
+        var transporter = nodemailer.createTransport('smtps://testheroku2%40gmail.com:(Test)1234@smtp.gmail.com');
         // setup e-mail data with unicode symbols 
         var mailOptions = {
             from: req.body.name, // sender address 
