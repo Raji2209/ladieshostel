@@ -24,7 +24,7 @@ var emailadd = req.body.email;
 				user : 'testheroku2@gmail.com',
 				pass : '(Test)1234'
 			}
-		})
+		});
         // setup e-mail data with unicode symbols 
         var mailOptions = {
             from: req.body.name, // sender address 
