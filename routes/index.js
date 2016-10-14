@@ -23,9 +23,9 @@ var emailadd = req.body.email;
 		var transporter = nodemailer.createTransport({
 			service : 'Gmail',
 			auth: {
-				:user => ENV['EMAIL_USER'],
-				:pass => ENV['EMAIL_PASSWORD']
-		});
+				:user_name => ENV['EMAIL_USER'],
+				:password => ENV['EMAIL_PASSWORD']
+		})
         // setup e-mail data with unicode symbols 
         var mailOptions = {
             from: req.body.name, // sender address 
