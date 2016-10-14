@@ -23,8 +23,8 @@ var emailadd = req.body.email;
 		var transporter = nodemailer.createTransport("SMTP", {
 			service : 'Gmail',
 			auth: {
-				user : process.env.EMAIL_USER,
-				pass : process.env.EMAIL_PASSWORD
+				user : 'testheroku2@gmail.com',
+				pass : '(Test)1234'
 			}
 		})
         // setup e-mail data with unicode symbols 
@@ -34,7 +34,7 @@ var emailadd = req.body.email;
             subject: req.body.subject, // Subject line 
 			msg : req.body.message,
             text: req.body.message, // plaintext body 
-            html: "Sender's Name : " + name + "<br /> Sender's email address : " + emailadd + "<br /> Sender's message : " + content
+            html: "Sender's Name : " + process.env.EMAIL_USER + "<br /> Sender's email address : " + emailadd + "<br /> Sender's message : " + content
         };
 
         // send mail with defined transport object 
