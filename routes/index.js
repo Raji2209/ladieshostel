@@ -24,8 +24,8 @@ var emailadd = req.body.email;
 		var transporter = nodemailer.createTransport({
 			service : 'Gmail',
 			auth: {
-				user : testheroku2@gmail.com,
-				pass : (Test)1234
+				user : "testheroku2@gmail.com",
+				pass : "(Test)1234"
 			}
 		});
         // setup e-mail data with unicode symbols 
