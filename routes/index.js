@@ -17,7 +17,9 @@ var content = req.body.message;
 var emailadd = req.body.email;
     console.log(" entering ");
     try {
-        var transporter = nodemailer.createTransport('smtps://'ENV['EMAIL_USER']+:ENV['EMAIL_PASSSWORD']+'@smtp.gmail.com');
+		var EMAIL_USER = ENV['EMAIL_USER];
+		var EMAIL_PASSWORD = ENV['EMAIL_PASSWORD];
+        var transporter = nodemailer.createTransport('smtps://EMAIL_USER:EMAIL_PASSWORD@smtp.gmail.com');
         // setup e-mail data with unicode symbols 
         var mailOptions = {
             from: req.body.name, // sender address 
