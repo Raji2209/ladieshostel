@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('nodemailer');
 var nodemailer = require('nodemailer');
 var routes = require('./routes/index');
-
+router = express.Router();
 var app = express();
  
 
@@ -57,6 +57,12 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+router.get('/',function(req,res,next){
+    console.log("entering rot");
+   res.render('index',{title:"Welcome page"});
+});
+
 
 router.post('/send', function (req, res, next) {
 var name = req.body.name;
