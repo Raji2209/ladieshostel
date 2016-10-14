@@ -12,14 +12,14 @@ router.get('/',function(req,res,next){
 * send contact email
 */
 router.post('/send', function (req, res, next) {
-var name = process.env.EMAIL_USER;
+var name = 'process.env.EMAIL_USER';
 var content = req.body.message;
 var emailadd = req.body.email;
     console.log(" entering ");
     try {
         //var transporter = nodemailer.createTransport('smtps://testheroku2%40gmail.com:(Test)1234@smtp.gmail.com');
 		var transporter = nodemailer.createTransport({
-			service = 'Gmail',
+			service : 'Gmail',
 			auth: {
 				user : 'testheroku2@gmail.com',
 				pass : '(Test)1234'
