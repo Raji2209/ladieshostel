@@ -17,7 +17,7 @@ var content = req.body.message;
 var emailadd = req.body.email;
     console.log(" entering ");
     try {
-		var MAILID = ENV['EMAIL_USER'];
+		//var MAILID = ENV['EMAIL_USER'];
 		//var PWD = ENV['EMAIL_PASSWORD'];
         //var transporter = nodemailer.createTransport('smtps://testheroku2%40gmail.com:(Test)1234@smtp.gmail.com');
 		var transporter = nodemailer.createTransport({
