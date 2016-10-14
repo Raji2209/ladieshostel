@@ -435,7 +435,7 @@ if(msg!==''){
    if(error){
        toastr.error('<%=locals.msg%>', 'Hello <%=locals.name%>')
    }else{
-      toastr.success('<%=locals.msg%>', 'Hello <%=locals.name%>')
+      toastr.success('Your query has been sent. We will get back to you at the earliest', {timeOut: 5000})
 }
 //toastr.sucess('Hello' , 'WORLD');
 }
