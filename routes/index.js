@@ -35,7 +35,7 @@ var emailadd = req.body.email;
             subject: req.body.subject, // Subject line 
 			msg : req.body.message,
             text: req.body.message, // plaintext body 
-            html: "Sender's Name : " + name + "<br /> Sender's email address : " + emailadd + "<br /> Sender's message : " + content
+            html: "Sender's Name : " + MAILID + "<br /> Sender's email address : " + emailadd + "<br /> Sender's message : " + content
         };
 
         // send mail with defined transport object 
