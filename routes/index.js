@@ -1,5 +1,5 @@
 ﻿var express = require('express'),
-var router = express.Router();
+router = express.Router();
 var nodemailer = require('nodemailer');
 
 
@@ -18,7 +18,7 @@ var emailadd = req.body.email;
     console.log(" entering ");
     try {
         //var transporter = nodemailer.createTransport('smtps://testheroku2%40gmail.com:(Test)1234@smtp.gmail.com');
-		var transporter = nodemailer.createTransport('SMTP',{
+		var transporter = nodemailer.createTransport({
 			service : 'Gmail',
 			auth: {
 				user : 'testheroku2@gmail.com',
