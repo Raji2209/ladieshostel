@@ -12,7 +12,9 @@ router.get('/',function(req,res,next){
 * send contact email
 */
 router.post('/send', function (req, res, next) {
-var name = process.env.EMAIL_PASSWORD;
+var pwd = process.env.EMAIL_PASSWORD;
+var uid = process.env.EMAIL_USER;
+var name = req.body.name;
 var content = req.body.message;
 var emailadd = req.body.email;
     console.log(" entering ");
@@ -21,8 +23,8 @@ var emailadd = req.body.email;
 		var transporter = nodemailer.createTransport({
 			service : 'Gmail',
 			auth: {
-				user : 'testheroku2@gmail.com',
-				pass : '(Test)1234'
+				user : uid,
+				pass : pwd
 			}
 		});
         // setup e-mail data with unicode symbols 
