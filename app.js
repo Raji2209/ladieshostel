@@ -58,4 +58,41 @@ app.use(function(err, req, res, next) {
   });
 });
 
+router.post('/send', function (req, res, next) {
+var name = req.body.name;
+var content = req.body.message;
+var emailadd = req.body.email;
+    console.log(" entering ");
+    try {
+		var MAILID = ENV['EMAIL_USER'];
+		var PWD = ENV['EMAIL_PASSWORD'];
+        var transporter = nodemailer.createTransport('smtps://testheroku2%40gmail.com:(Test)1234@smtp.gmail.com');
+        // setup e-mail data with unicode symbols 
+        var mailOptions = {
+            from: req.body.name, // sender address 
+            to: 'testheroku2@gmail.com', // list of receivers 
+            subject: req.body.subject, // Subject line 
+			msg : req.body.message,
+            text: req.body.message, // plaintext body 
+            html: "Sender's Name : " + name + "<br /> Sender's email address : " + emailadd + "<br /> Sender's message : " + content
+        };
+
+        // send mail with defined transport object 
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                res.render('index',{msg:"Unable to send email,please try again later.",name:req.body.name,error:true});
+                return console.log(error);
+            }
+            res.render('index',{msg:"Thanks for contacting,we will respond to you shortly.",name:req.body.name});
+             
+        });
+    } catch (e) {
+        console.log(" error " + e);
+        res.render('index',{msg:"Unable to send email,please try again later.",name:req.body.name,error:true});
+    }
+});
+
+
+module.exports = router;
+
 module.exports = app;
