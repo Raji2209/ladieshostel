@@ -420,10 +420,10 @@
   "positionClass": "toast-top-center",
   "preventDuplicates": false,
   "onclick": null,
-  "showDuration": "300",
-  "hideDuration": "1000",
-  "timeOut": "5000",
-  "extendedTimeOut": "1000",
+  "showDuration": "3000000",
+  "hideDuration": "10",
+  "timeOut": "50000000",
+  "extendedTimeOut": "1000000s",
   "showEasing": "swing",
   "hideEasing": "linear",
   "showMethod": "fadeIn",
@@ -431,13 +431,14 @@
 }
 var msg='<%=locals.msg%>';
 var error='<%=locals.error%>';
-if(msg!==''){
+/*if(msg!==''){
    if(error){
        toastr.error('<%=locals.msg%>', 'Hello <%=locals.name%>')
    }else{
       toastr.sucess('<%=locals.msg%>', 'Hello <%=locals.name%>')
-}
-}
+}*/
+//toastr.sucess('Hello' , 'WORLD');
+//}
    </script>
 </body>
 </html>
