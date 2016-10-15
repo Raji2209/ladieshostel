@@ -45,9 +45,10 @@ router.post('/send', function (req, res, next) {
                 res.render('index',{msg:"Unable to send email,please try again later.",name:req.body.name,error:true});
                 return console.log(error);
             }
-            res.render('index',{msg:"Thanks for contacting,we will respond to you shortly.",name:req.body.name});
-			issuccess = 1;
-             
+			else {
+				res.render('index',{msg:"Thanks for contacting,we will respond to you shortly.",name:req.body.name});
+				issuccess = 1;
+            } 
         });
     } catch (e) {
         console.log(" error " + e);
