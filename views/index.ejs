@@ -414,15 +414,15 @@
    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
    <!--link href="toastr.css" rel="stylesheet"/-->
    
-   <script>
+    <script>
 	var msg='<%=locals.msg%>';
 	var error='<%=locals.error%>';  
-	
+	console.log(issuccess);
 	function foo(){
-        if(msg==error){
-         	alert('Oops! There is a problem with the mail server. Please try again later.');
+        if(issuccess){
+         	alert('123Oops! There is a problem with the mail server. Please try again later.');
 	    }else{
-            alert('Your email has been sent');
+            alert('456Your email has been sent');
 		}
 	}
    </script>
