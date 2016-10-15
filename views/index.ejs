@@ -416,17 +416,14 @@
    
      <script>
 	var msg='<%=locals.msg%>';
+	var error='<%=locals.error%>';  
+	
 	function foo(){
-	if(msg){
         if(error){
          	alert('Oops! There is a problem with the mail server. Please try again later.');
 	    }else{
             alert('Your email has been sent');
 		}
-        }
-	else{
-		alert('Oops! There is a problem with the mail server. Please try again later.');
-	}
 	}
        $(document).ready(function(){
 
