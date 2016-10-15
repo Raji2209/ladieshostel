@@ -414,51 +414,17 @@
    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
    <!--link href="toastr.css" rel="stylesheet"/-->
    
-     <script>
+   <script>
 	var msg='<%=locals.msg%>';
 	var error='<%=locals.error%>';  
 	
 	function foo(){
-        if(error){
+        if(msg==error){
          	alert('Oops! There is a problem with the mail server. Please try again later.');
 	    }else{
             alert('Your email has been sent');
 		}
 	}
-       $(document).ready(function(){
-
-     toastr.options = {
-        "closeButton": false,
-        "debug": false,
-        "newestOnTop": false,
-        "progressBar": false,
-        "positionClass": "toast-top-center",
-        "preventDuplicates": false,
-        "onclick": null,
-        "showDuration": "1000",
-        "hideDuration": "10",
-        "timeOut": "5000",
-        "extendedTimeOut": "10000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-      }
-      var msg='<%=locals.msg%>';
-      var error='<%=locals.error%>';       
-      if(msg){
-        if(error){
-            function foo(){
-						alert('Oops! There is a problem with the mail server. Please try again later.');
-						}
-         }else{
-          function foo(){
-						alert('Your email has been sent');
-						}
-          }}
- 
-       });
-      
    </script>
 </body>
 </html>
