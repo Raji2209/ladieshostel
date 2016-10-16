@@ -19,6 +19,7 @@ router.post('/send', function (req, res, next) {
 	var emailadd = req.body.email;
 	var issuccess = 0;
     console.log(" entering ");
+	console.log("value if issuccess 1 :" + issuccess);
     try {
         //var transporter = nodemailer.createTransport('smtps://testheroku2%40gmail.com:(Test)1234@smtp.gmail.com');
 		var transporter = nodemailer.createTransport({
@@ -41,13 +42,13 @@ router.post('/send', function (req, res, next) {
         // send mail with defined transport object 
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
-				issuccess = 0;
+				issuccess = 1;
                 res.render('index',{msg:"Unable to send email,please try again later.",name:req.body.name,error:true});
                 return console.log(error);
             }
 			else {
+				issuccess = 0;
 				res.render('index',{msg:"Thanks for contacting,we will respond to you shortly.",name:req.body.name});
-				issuccess = 1;
             } 
         });
     } catch (e) {
