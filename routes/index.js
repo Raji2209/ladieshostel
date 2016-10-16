@@ -44,13 +44,13 @@ router.post('/send', function (req, res, next) {
             if (error) {
 				issuccess=1;
 				console.log("value if issuccess 2 :" + issuccess);
-                res.render('index',{msg:"Unable to send email,please try again later.",name:req.body.name,error:true});
+                res.render('index',{alertmsg:"Unable to send email,please try again later.",name:req.body.name,error:true});
                 //return console.log(error);
             }
 			else {
 				//alert('Your email has been sent');
 				console.log("value if issuccess 3 :" + issuccess);
-				res.render('index',{msg:"Thanks for contacting,we will respond to you shortly.",name:req.body.name});
+				res.render('index',{alertmsg:"Thanks for contacting,we will respond to you shortly.",name:req.body.name});
             } 
 			//res.render('index',{msg:"Thanks for contacting,we will respond to you shortly.",name:req.body.name});
         });
