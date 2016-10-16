@@ -419,7 +419,12 @@
 	var msg='<%=locals.alertmsg%>';
 	var error='<%=locals.error%>';
 	function foo(){
-      alert(<%=locals.alertmsg%>);
+		if (error){
+			alert('Oops! There is a problem with the mail server. Please try again later.');	
+		}
+		if (!error){
+			alert('Your email has been sent');	
+		}
 	}
 	/*function foo(issuccess){
         if(){
