@@ -418,13 +418,9 @@
 		
 	var msg='<%=locals.msg%>';
 	var error='<%=locals.error%>';
-	function foo(issuccess){
-   if(error!=" "){
+	function foo(){
       alert(%locals.msg%);
-   }if(error==" "){
-      alert(%locals.error);
-}
-}
+	}
 	/*function foo(issuccess){
         if(){
          	alert('Oops! There is a problem with the mail server. Please try again later.');
