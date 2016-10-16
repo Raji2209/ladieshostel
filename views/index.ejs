@@ -420,9 +420,9 @@
 	var error='<%=locals.error%>';
 	function foo(issuccess){
    if(error!=" "){
-      alert('Oops! There is a problem with the mail server. Please try again later.');
+      alert(%locals.msg%);
    }else{
-      alert('Your email has been sent');
+      alert(%locals.msg%);
 }
 }
 	/*function foo(issuccess){
