@@ -421,8 +421,8 @@
 	function foo(issuccess){
    if(error!=" "){
       alert(%locals.msg%);
-   }else{
-      alert(%locals.error%);
+   }if(error==" "){
+      alert(%locals.error);
 }
 }
 	/*function foo(issuccess){
