@@ -415,15 +415,23 @@
    <!--link href="toastr.css" rel="stylesheet"/-->
    
     <script>
-	var msg='<%=locals.issuccess%>'; 
-	console.log("value if issuccess 3 :" + issuccess);
-	function foo(){
-        if(!msg){
+		
+	var msg='<%=locals.msg%>';
+	var error='<%=locals.error%>';
+	function foo(issuccess){
+   if(error!=" "){
+      alert('Oops! There is a problem with the mail server. Please try again later.');
+   }else{
+      alert('Your email has been sent');
+}
+}
+	/*function foo(issuccess){
+        if(){
          	alert('Oops! There is a problem with the mail server. Please try again later.');
 	    }else{
             alert('Your email has been sent');
 		}
-	}
+	}*/
    </script>
 </body>
 </html>
