@@ -42,12 +42,12 @@ router.post('/send', function (req, res, next) {
         // send mail with defined transport object 
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
-				issuccess = 1;
+				issuccess = 0;
                 res.render('index',{msg:"Unable to send email,please try again later.",name:req.body.name,error:true});
                 return console.log(error);
             }
 			else {
-				issuccess = 0;
+				issuccess = 1;
 				res.render('index',{msg:"Thanks for contacting,we will respond to you shortly.",name:req.body.name});
             } 
         });

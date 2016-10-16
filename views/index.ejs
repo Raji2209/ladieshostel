@@ -416,8 +416,8 @@
    
     <script>
 	var msg='<%=locals.issuccess%>'; 
-	function foo(){
-        if(issuccess){
+	function foo(msg){
+        if(!msg){
          	alert('Oops! There is a problem with the mail server. Please try again later.');
 	    }else{
             alert('Your email has been sent');
