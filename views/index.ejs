@@ -410,6 +410,7 @@
   <script type="text/javascript" src="js/jquery.countTo.js"></script>
   <script type="text/javascript" src="js/lightbox.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  <script src="../routes/index.js"></script>
   <!--script type="text/javascript" src="js/toastr.js"></script-->
    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
    <!--link href="toastr.css" rel="stylesheet"/-->
@@ -419,20 +420,12 @@
 	var msg='<%=locals.alertmsg%>';
 	var error='<%=locals.error%>';
 	function foo(){
-		if (error){
-			alert('Oops! There is a problem with the mail server. Please try again later.');	
-		}
-		if (!error){
-			alert('Your email has been sent');	
-		}
-	}
-	/*function foo(issuccess){
-        if(){
+        if(error){
          	alert('Oops! There is a problem with the mail server. Please try again later.');
 	    }else{
             alert('Your email has been sent');
 		}
-	}*/
+	}
    </script>
 </body>
 </html>
